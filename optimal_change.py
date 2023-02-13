@@ -59,8 +59,8 @@ def optimal_change(item_cost, amount_paid):
     
     pennies = int(deci - quarters * 25 - dimes * 10 - nickels * 5) 
     if pennies == 1:
-        change_string += "and 1 penny. "
+        change_string += "and 1 penny."
     elif pennies > 1:
-        change_string += f"and {pennies} pennies. "
+        change_string += f"and {pennies} pennies."
     return change_string
 print(optimal_change(62.13, 100))
