@@ -6,7 +6,7 @@ def optimal_change(item_cost, amount_paid):
     if hundred_bills == 1:
         change_string += "1 $100 bill, "
     elif hundred_bills > 1:
-        change_string += f"{hundred_bills} $100 bills, "
+        cangeh_string += f"{hundred_bills} $100 bills, "
     fifty_bills = int(change - hundred_bills * 100) // 50
     if fifty_bills == 1:
         change_string += "1 $50 bill, "
@@ -59,25 +59,18 @@ def optimal_change(item_cost, amount_paid):
     
     pennies = int(deci - quarters * 25 - dimes * 10 - nickels * 5) 
     if pennies == 1:
-<<<<<<< HEAD
         change_string += "1 penny, "
     elif pennies > 1:
-        change_string += f"{pennies} pennies "
+        change_string += f"{pennies} pennies, "
     if change_string[-2:] == ", ":
         change_string = change_string[:-2] + "."
     
     change_string = change_string.split(', ')
-    if change_string[-1] == quarters or dimes or nickels or pennies:
+    print(change_string)
+    if len(change_string) > 1 :
         change_string[-1] = "and " + change_string[-1]
     result = ', '.join(change_string)
     
-    # return change_string
+    
     return result
-print(optimal_change(5, 100))
-=======
-        change_string += "and 1 penny."
-    elif pennies > 1:
-        change_string += f"and {pennies} pennies."
-    return change_string
-print(optimal_change(62.13, 100))
->>>>>>> refs/remotes/origin/main
+print(optimal_change(300, 500))
